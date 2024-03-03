@@ -3,7 +3,7 @@ const postApi = 'https://openapi.programming-hero.com/api/retro-forum/posts';
 const fetchPost = async()=>{
     let res = await fetch(postApi);
     let data = await res.json();
-    console.log(data.posts);
+    // console.log(data.posts);
     loadPosts(data.posts);
     
 
