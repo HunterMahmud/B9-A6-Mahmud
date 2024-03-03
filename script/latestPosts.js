@@ -3,7 +3,7 @@ let latestApi = "https://openapi.programming-hero.com/api/retro-forum/latest-pos
 const latestPost = async () => {
     const res = await fetch(latestApi);
     const data = await res.json();
-    console.log(data);
+    // console.log(data);
     loadLatestPosts(data);
 }
 
@@ -19,7 +19,7 @@ const loadLatestPosts = (posts) => {
         <div class="card-body">
           <div class="flex gap-2 items-center">
             <i class="fa-regular fa-calendar"></i>
-            <p class="text-[#12132D99]">${post.author?.posted_date?post.author.posted_date: "No Pusblish Date"}</p>
+            <p class="text-[#12132D99]">${post.author?.posted_date? post.author.posted_date: "No Pusblish Date"}</p>
           </div>
           <h2 class="font-extrabold text-lg text-[#12132D]">${post.title}</h2>
           <p class="text-[#12132D99]">${post.description}</p>
@@ -29,7 +29,7 @@ const loadLatestPosts = (posts) => {
             </div>
             <div>
                <h4 class="font-bold text-[#12132D]">${post.author?.name}</h4>
-               <p class="text-[#12132D99]">${post.author?.designation?post.author.designation:'Unknown'} </p>
+               <p class="text-[#12132D99]">${post.author?.designation ? post.author.designation:'Unknown'} </p>
             </div>
           </div>
         </div>
@@ -39,3 +39,5 @@ const loadLatestPosts = (posts) => {
 }
 
 latestPost()
+
+

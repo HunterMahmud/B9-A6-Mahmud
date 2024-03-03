@@ -1,15 +1,15 @@
 const postApi = 'https://openapi.programming-hero.com/api/retro-forum/posts';
-
+let markAsReadCount = 0;
 const fetchPost = async()=>{
     let res = await fetch(postApi);
     let data = await res.json();
-    // console.log(data.posts);
+    console.log(data.posts);
     loadPosts(data.posts);
     
 
 }
 
-const loadPosts = (posts) => {
+const loadPosts = async (posts) => {
     let postContainer = document.getElementById('post-container');
     posts.forEach(post => {
         let postDiv = document.createElement('div');
@@ -25,7 +25,7 @@ const loadPosts = (posts) => {
             <p>#${post.category}</p>
             <p>Author: ${post.author.name ? post.author.name:"Unknown"}</p>
         </div>
-        <h3 class="font-mulish font-bold text-xl text-[#12132D]">${post.title}</h3>
+        <h3 id="title-${post.id}" class="font-mulish font-bold text-xl text-[#12132D]">${post.title}</h3>
         <p>${post.description}</p>
         <hr>
         <div class="flex gap-3 justify-between">
@@ -36,15 +36,15 @@ const loadPosts = (posts) => {
             </div>
             <div class="flex items-center gap-2">
                 <i class="fa-regular fa-eye"></i>
-                <p>1534</p>
+                <p id="view-${post.id}">${post.view_count}</p>
             </div>
             <div class="flex items-center gap-2">
                 <i class="fa-regular fa-clock"></i>
                 <p><span>${post.posted_time}</span> min</p>
             </div>
             </div>
-            <div class="flex items-center justify-center w-6 h-6 bg-[#10B981] rounded-full">
-            <button><i class="fa-solid fa-envelope-open text-white font-thin"></i></button>
+            <div class="flex items-center justify-center bg-[#10B981] rounded-full">
+            <button class=""><i class="btn-read flex items-center justify-center fa-solid fa-envelope-open text-white font-thin w-8 h-8 "></i></button>
             </div>
         </div>
         </div>
@@ -52,7 +52,38 @@ const loadPosts = (posts) => {
     `;
     postContainer.appendChild(postDiv);
     });
-    
+    markAsRead()
 }
 
 fetchPost()
+
+
+const markAsRead = ()=> {
+    let readBtns = document.querySelectorAll('.btn-read');
+    readBtns.forEach((readBtn)=>{
+        readBtn.addEventListener('click',(event)=>{
+            markAsReadCount++;
+            let markAsReadIncrement = document.getElementById('mark-as-read');
+            markAsReadIncrement.innerText = markAsReadCount;
+            let markedPost = document.getElementById("marked-post");
+            let child = event.target.parentNode.parentNode.parentNode.parentNode.children;
+            let title = child[1].innerText;
+            let viewCount = child[4].children[0].children[1].children[1].innerText;
+            console.log(viewCount);
+            let readPostDiv = document.createElement("div");
+            readPostDiv.classList = 'flex justify-between items-center bg-white p-3 rounded-2xl';
+            let readPost = `
+                <h4 class="font-semibold text-[#12132D]">${title}</h4>
+                <div class="flex items-center gap-2 font-inter text-[#12132D99]">
+                  <i class="fa-regular fa-eye"></i>
+                  <p>${viewCount}</p>
+                </div>
+            `;
+            readPostDiv.innerHTML = readPost;
+            markedPost.appendChild(readPostDiv);
+        })
+    })
+    
+}
+
+

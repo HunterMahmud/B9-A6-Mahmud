@@ -76,7 +76,7 @@
           <div class="hidden sm:flex gap-4">
             <i title="Home" class="fa-solid fa-house border-2 border-solid border-[#0307121A] bg-[#12132D08] rounded-full py-4 px-4"></i>
           <i title="Edit" class="fa-solid fa-pencil border-2 border-solid border-[#0307121A] bg-[#12132D08] rounded-full py-4 px-4"></i>
-          <i title="User" class="fa-solid fa-user-plus border-2 border-solid border-[#0307121A] bg-[#12132D08] rounded-full py-4 px-4"></i>
+          <i title="Add" class="fa-solid fa-user-plus border-2 border-solid border-[#0307121A] bg-[#12132D08] rounded-full py-4 px-4"></i>
           <i title="Flag" class="fa-regular fa-flag border-2 border-solid border-[#0307121A] bg-[#12132D08] rounded-full py-4 px-4"></i>
           </div>
           <button title="Sign In" class="btn px-8 py-4 rounded-full bg-[#797DFC] text-xl font-bold content-center">Sign In</button>
@@ -87,7 +87,7 @@
  
           <!-- banner start here  -->
       <section class="mx-auto px-7 lg:px-5 my-10">
-        <div class="flex justify-center bg-[#12132D]  bg-[url('./images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom rounded-3xl items-center my-5 mx-auto max-w-7xl px-0 lg:px-10">
+        <div class="flex box-border justify-center bg-[#12132D]  bg-[url('./images/bgbanner.png')] bg-no-repeat bg-cover bg-bottom rounded-3xl items-center my-5 mx-auto max-w-7xl px-0 lg:px-10">
           <div
             class="flex flex-col lg:flex-row justify-between h-[550px] p-5 w-full  items-center gap-5  text-white px-14"
           >
@@ -149,19 +149,11 @@
               <div class="font-bold text-xl">Title</div>
               <div class="flex items-center gap-2 font-inter text-[#12132D99]">
                 <i class="fa-solid fa-check-double"></i>
-                <p>Mark as read (<span>4</span>)</p>
+                <p>Mark as read (<span id="mark-as-read">0</span>)</p>
               </div>
             </div>
-            <div class="flex flex-col gap-4">
-              <!-- first child  -->
-              <div class="flex justify-between items-center bg-white p-3 rounded-2xl">
-                <h4 class="font-semibold text-[#12132D]">post title here</h4>
-                <div class="flex items-center gap-2 font-inter text-[#12132D99]">
-                  <i class="fa-regular fa-eye"></i>
-                  <p>1578</p>
-                </div>
-              </div>
-              <!-- first child ends -->
+            <div id="marked-post" class="flex flex-col gap-4">
+              <!-- marked post will be appear here  -->
             </div>
           </div>
         </div>
