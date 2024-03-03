@@ -34,6 +34,36 @@
       .font-inter{
         font-family: "Inter", sans-serif;
       }
+    .avatar.online:before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    display: block;
+    border-radius: 100%;
+    --tw-bg-opacity: 1;
+    background-color: #10B981;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: white;
+    width: 10%;
+    height: 8%;
+    top: 7%;
+    right: 7%}
+.avatar.offline:before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    display: block;
+    border-radius: 100%;
+    --tw-bg-opacity: 1;
+    background-color: #FF3434;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: white;
+    width: 10%;
+    height: 8%;
+    top: 7%;
+    right: 7%}
  
     </style>
   </head>
@@ -99,7 +129,81 @@
       <!-- banner ends here  -->
       
     </header>
-    <main></main>
+    <main>
+      <!-- let's discuss section starts here  -->
+       <section id="lets-discuss" class="mx-auto lg:px-24 px-8 py-10">
+        <div class="flex flex-col justify-center items-center text-center my-6">
+          <h2 class="text-[#12132D] text-3xl lg:text-4xl font-black">
+            Let's Discuss
+          </h2>
+          <p class="my-6 max-w-[800px] font-inter text-[#12132D99]">
+            Embark on a Journey with Nova-Travel: Discover Unforgettable Adventures, Immerse in Exotic Cultures, and Create Timeless Memories. Your Passport to Extraordinary Experiences Awaits!
+          </p>
+        </div>
+        <div class="flex justify-between gap-6">
+          <div class="w-[68%] ">
+            <!-- first child -->
+            <div class="flex rounded-3xl gap-6 p-6 w-full bg-[#797DFC1A] font-inter text-[#12132D99]">
+              <div class="avatar online">
+                <div class="w-24 h-24 rounded-xl">
+                  <img src="./images/logo.png" />
+                </div>
+              </div>
+              <div class="flex flex-col gap-2 w-[75%]">
+                <div class="flex gap-3 font-medium text-sm text-[#12132DCC]">
+                  <p>#tag</p>
+                  <p>Author:</p>
+                </div>
+                <h3 class="font-mulish font-bold text-xl text-[#12132D]">post title</h3>
+                <p>post desc</p>
+                <hr>
+                <div class="flex gap-3 justify-between">
+                  <div class="flex gap-3">
+                    <div class="flex items-center gap-2">
+                      <i class="fa-regular fa-message"></i>
+                      <p>4324</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-regular fa-eye"></i>
+                      <p>1534</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                      <i class="fa-regular fa-clock"></i>
+                      <p><span>5</span> min</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-center w-6 h-6 bg-[#10B981] rounded-full">
+                    <button><i class="fa-solid fa-envelope-open text-white font-thin"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- first child ends -->
+          </div>
+          <div class="w-[30%] rounded-3xl p-4 bg-[#797DFC1A]">
+            <div class="flex gap-2 justify-between text-[#12132D]">
+              <div class="font-bold text-xl">title</div>
+              <div class="flex items-center gap-2 font-inter text-[#12132D99]">
+                <i class="fa-solid fa-check-double"></i>
+                <p>mark as read (<span>4</span>)</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-4">
+              <!-- first child  -->
+              <div class="flex justify-between items-center bg-white p-3 rounded-2xl">
+                <h4 class="font-semibold text-[#12132D]">post title here</h4>
+                <div class="flex items-center gap-2 font-inter text-[#12132D99]">
+                  <i class="fa-regular fa-eye"></i>
+                  <p>1578</p>
+                </div>
+              </div>
+              <!-- first child ends -->
+            </div>
+          </div>
+        </div>
+       </section>
+       <!-- let's discuss section ends here  -->
+    </main>
      <!-- footer starts here -->
      <footer class="flex flex-col w-full mx-auto text-center items-center py-16 mt-24 bg-gradient-to-t from-[rgba(18,19,45,0.05)] to-[rgba(18,19,45,0.02)]">
      <h1 class="text-4xl font-black text-[#12132D]">Nova</h1>
