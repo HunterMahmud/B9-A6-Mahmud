@@ -13,7 +13,7 @@ const loadPosts = (posts) => {
     let postContainer = document.getElementById('post-container');
     posts.forEach(post => {
         let postDiv = document.createElement('div');
-    postDiv.classList = 'flex rounded-3xl gap-6 p-6 w-full bg-[#797DFC1A] font-inter text-[#12132D99]';
+    postDiv.classList = 'flex rounded-3xl gap-3 flex-wrap p-6 lg:px-10 w-full bg-[#797DFC1A] font-inter text-[#12132D99] justify-between ';
     postDiv.innerHTML = `
         <div class="avatar ${post.isActive?"online":"offline"}">
         <div class="w-24 h-24 rounded-xl">
