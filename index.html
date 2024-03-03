@@ -95,7 +95,7 @@
               <h3 class="font-black text-6xl">Welcome To the <br> <span class="text-[#797DFC]">Nova</span> Forum</h3>
               <p class="font-medium text-xl text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
               <div class="flex justify-between bg-white py-2 px-3 rounded-full">
-                <input id="" placeholder="Search here anything" class="w-full text-black p-2 border-none outline-none" type="text">
+                <input id="input-text" placeholder="Search here anything" class="w-full text-black p-2 border-none outline-none" type="text">
                 <button id="search" class="bg-[#797DFC] text-white rounded-full px-4">Search</button>
               </div>
             </div>
@@ -141,7 +141,10 @@
           </p>
         </div>
         <div class="flex flex-col lg:flex-row justify-between gap-6">
-          <div id="post-container" class="flex flex-col gap-6 w-full  lg:w-[55%]">
+          <div id="spinner" class="hidden flex justify-center lg:w-[55%] items-center">
+            <span class="loading loading-spinner loading-lg"></span>
+          </div>
+          <div id="post-container" class="hidden flex flex-col gap-6 w-full  lg:w-[55%]">
            <!-- all posts will load here  -->
           </div>
           <div class="flex flex-col gap-5 lg:w-[45%] w-full h-fit rounded-3xl p-4 lg:px-10 bg-[#797DFC1A]">
@@ -164,8 +167,8 @@
         <div class="flex justify-between items-center flex-row md:flex-row bg-[#12132D] rounded-3xl text-white p-6 lg:px-10">
           <div class="flex flex-col gap-2 lg:gap-5">
             <h3 class="font-black text-4xl">Join Our Forum</h3>
-            <p class="text-lg text-[#FFFFFFCC]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. At iusto necessitatibus corporis!</p>
-            <button class="btn btn-primary rounded-full w-fit font-bold text-xl text-center text-white">Resgister Now</button>
+            <p class="text-lg text-[#FFFFFFCC] max-w-[500px]">Join Nova's thriving community! Connect, share, and explore diverse discussions with us. Your voice matters here!</p>
+            <button class="flex  rounded-full w-fit font-bold text-lg lg:text-xl text-center justify-center items-center px-4 py-2 bg-blue-600  text-white ">Register Now</button>
           </div>
           <div><img src="./images/joinforum.png" alt=""></div>
         </div>
@@ -194,7 +197,7 @@
      <h1 class="text-4xl font-black text-[#12132D]">Nova</h1>
 
       <p class="text-[#12132DB3] text-center max-w-[800px] mt-6 px-[3%]">
-        Curated experiences, personalized service, and a commitment to unique adventures. Your trusted partner for unforgettable travel moments, offering confidence and distinction in every journey.
+        Join the Nova community and share your thoughts in our website! Explore the latest updates, engage with diverse content, and be a part of the conversation. Your posts matter!
       </p>
       <ul class="flex gap-5 list-none items-center justify-center my-6 mx-auto text-2xl">
         <li>

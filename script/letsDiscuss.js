@@ -1,17 +1,31 @@
-const postApi = 'https://openapi.programming-hero.com/api/retro-forum/posts';
+let postApi = 'https://openapi.programming-hero.com/api/retro-forum/posts';
 let markAsReadCount = 0;
-const fetchPost = async()=>{
+const fetchPost = async(query,first)=>{
+    // console.log(query,first);
+    if(query?.length>0){
+        spinnerController(true);
+        postApi = `https://openapi.programming-hero.com/api/retro-forum/posts?category=${query}`;
+        // console.log(postApi);
+    }
     let res = await fetch(postApi);
     let data = await res.json();
-    console.log(data.posts);
-    loadPosts(data.posts);
+    // console.log(data.posts);
+    loadPosts(data.posts,first);
     
 
 }
 
-const loadPosts = async (posts) => {
+const loadPosts = async (posts,first) => {
+    // console.log(posts,first);
     let postContainer = document.getElementById('post-container');
+    postContainer.innerText = '';
+    if(!first){
+        setTimeout(()=>{spinnerController(false)},2000);
+    }else{
+        spinnerController(false);
+    }
     posts.forEach(post => {
+        // console.log(post);
         let postDiv = document.createElement('div');
     postDiv.classList = 'flex rounded-3xl gap-3 flex-wrap p-6 lg:px-10 w-full bg-[#797DFC1A] font-inter text-[#12132D99] justify-between ';
     postDiv.innerHTML = `
@@ -52,10 +66,12 @@ const loadPosts = async (posts) => {
     `;
     postContainer.appendChild(postDiv);
     });
+    
+
     markAsRead()
 }
 
-fetchPost()
+fetchPost('',true);
 
 
 const markAsRead = ()=> {
@@ -85,5 +101,37 @@ const markAsRead = ()=> {
     })
     
 }
+
+function spinnerController(isTrue){
+    let spinner = document.getElementById('spinner');
+    let postContainer = document.getElementById("post-container");
+    if(isTrue){
+        postContainer.classList.add('hidden');
+        spinner.classList.remove('hidden');
+    }else{
+        spinner.classList.add("hidden");
+        postContainer.classList.remove('hidden');
+    }
+}
+
+
+let searchFunctionality = () => {
+    let search = document.getElementById('search');
+    search.addEventListener('click',()=>{
+        
+        let input = document.getElementById("input-text");
+        fetchPost(input.value);
+    })
+}
+
+searchFunctionality();
+
+
+
+
+
+
+
+
 
 
