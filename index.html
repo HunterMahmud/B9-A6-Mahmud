@@ -46,9 +46,9 @@
     outline-width: 2px;
     outline-color: white;
     width: 10%;
-    height: 8%;
-    top: 7%;
-    right: 7%}
+    height: 10%;
+    top: -3%;
+    right: -3%}
 .avatar.offline:before {
     content: "";
     position: absolute;
@@ -61,9 +61,9 @@
     outline-width: 2px;
     outline-color: white;
     width: 10%;
-    height: 8%;
-    top: 7%;
-    right: 7%}
+    height: 10%;
+    top: -3%;
+    right: -3%}
  
     </style>
   </head>
@@ -140,47 +140,11 @@
             Embark on a Journey with Nova-Travel: Discover Unforgettable Adventures, Immerse in Exotic Cultures, and Create Timeless Memories. Your Passport to Extraordinary Experiences Awaits!
           </p>
         </div>
-        <div class="flex justify-between gap-6">
-          <div class="w-[68%] ">
-            <!-- first child -->
-            <div class="flex rounded-3xl gap-6 p-6 w-full bg-[#797DFC1A] font-inter text-[#12132D99]">
-              <div class="avatar online">
-                <div class="w-24 h-24 rounded-xl">
-                  <img src="./images/logo.png" />
-                </div>
-              </div>
-              <div class="flex flex-col gap-2 w-[75%]">
-                <div class="flex gap-3 font-medium text-sm text-[#12132DCC]">
-                  <p>#tag</p>
-                  <p>Author:</p>
-                </div>
-                <h3 class="font-mulish font-bold text-xl text-[#12132D]">post title</h3>
-                <p>post desc</p>
-                <hr>
-                <div class="flex gap-3 justify-between">
-                  <div class="flex gap-3">
-                    <div class="flex items-center gap-2">
-                      <i class="fa-regular fa-message"></i>
-                      <p>4324</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <i class="fa-regular fa-eye"></i>
-                      <p>1534</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                      <i class="fa-regular fa-clock"></i>
-                      <p><span>5</span> min</p>
-                    </div>
-                  </div>
-                  <div class="flex items-center justify-center w-6 h-6 bg-[#10B981] rounded-full">
-                    <button><i class="fa-solid fa-envelope-open text-white font-thin"></i></button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!-- first child ends -->
+        <div class="flex flex-col lg:flex-row justify-between gap-6">
+          <div id="post-container" class="flex flex-col gap-6 w-full  lg:w-[68%]">
+           
           </div>
-          <div class="w-[30%] rounded-3xl p-4 bg-[#797DFC1A]">
+          <div class="lg:w-[30%] w-full h-fit rounded-3xl p-4 bg-[#797DFC1A]">
             <div class="flex gap-2 justify-between text-[#12132D]">
               <div class="font-bold text-xl">title</div>
               <div class="flex items-center gap-2 font-inter text-[#12132D99]">
@@ -229,5 +193,7 @@
       <p class="text-[#12132D80] font-light">Copyright &copy;2024, All Rights Reserved.</p>
     </footer>
     <!-- footer ends here -->
+    <!-- scripts -->
+    <script src="./script/letsDiscuss.js"></script>
   </body>
 </html>
