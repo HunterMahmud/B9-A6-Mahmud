@@ -41,7 +41,7 @@ const loadPosts = async (posts,first) => {
         </div>
         <h3 id="title-${post.id}" class="font-mulish font-bold text-xl text-[#12132D]">${post.title}</h3>
         <p>${post.description}</p>
-        <hr>
+        <hr class="my-4 border-dashed border-t-2 border-gray-400">
         <div class="flex gap-3 justify-between">
             <div class="flex gap-3">
             <div class="flex items-center gap-2">
@@ -85,7 +85,7 @@ const markAsRead = ()=> {
             let child = event.target.parentNode.parentNode.parentNode.parentNode.children;
             let title = child[1].innerText;
             let viewCount = child[4].children[0].children[1].children[1].innerText;
-            console.log(viewCount);
+            // console.log(viewCount);
             let readPostDiv = document.createElement("div");
             readPostDiv.classList = 'flex justify-between items-center bg-white p-3 rounded-2xl';
             let readPost = `
